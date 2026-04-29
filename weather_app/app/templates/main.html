@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Weather App{% endblock %}
+{% block content %}
+<button onclick="getWeatherLocationAndSend()">Get Weather</button>
+{% csrf_token %}
+<div id="weather-result">
+
+</div>
+{% endblock %}
