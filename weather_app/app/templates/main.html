@@ -4,6 +4,12 @@
 <button onclick="getWeatherLocationAndSend()">Get Weather</button>
 {% csrf_token %}
 <div id="weather-result">
-
+    <h1>Here is the weather information:</h1>
+    <p class="pera" id="city"></p>
+    <p class="pera" id="temperature"></p>
+    <p class="pera" id="description"></p>
+    <p class="pera" id="humidity"></p>
+    <p class="pera" id="pressure"></p>
+    <p class="pera" id="wind-speed"></p>
 </div>
 {% endblock %}

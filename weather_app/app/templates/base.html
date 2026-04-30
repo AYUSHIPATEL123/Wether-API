@@ -15,7 +15,7 @@
     {% endblock  %}
 </body>
 <script>
-const WEATHER_URL = "{% url 'weather' %}";
+const WEATHER_URL = "/app/weather/";
 function getCsrfToken(){
     return document.querySelector('[name=csrfmiddlewaretoken]').value
 }

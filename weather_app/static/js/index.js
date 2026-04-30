@@ -3,7 +3,9 @@ function getWeatherLocationAndSend(){
         navigator.geolocation.getCurrentPosition(function(position){
 
             const lat = position.coords.latitude
-            const log = position.coords.longitude
+            const lon = position.coords.longitude
+
+            console.log("SENDING:",lat,lon);
 
             fetch(WEATHER_URL,{
 
@@ -14,12 +16,24 @@ function getWeatherLocationAndSend(){
                     "X-CSRFToken": getCsrfToken()
                 },
 
-                body:JSON.stringify({
+                body: JSON.stringify({
                     lat:lat,
-                    log:log
+                    lon:lon
                 })
+        
             }).then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if(data.cod != 200){
+                    alert(data.message)
+                    return;
+                }
+                document.getElementById('city').innerText = data.name
+                document.getElementById('temperature').innerText = data['main']['temp'] + 'c'
+                document.getElementById('description').innerText = data['weather'][0]['description']
+                document.getElementById('humidity').innerText = data['main']['humidity']
+                document.getElementById('pressure').innerText = data['main']['pressure']
+                document.getElementById('wind-speed').innerText = data['wind']['speed']
+            })
 
         })
     }else{
