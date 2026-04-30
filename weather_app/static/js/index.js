@@ -27,12 +27,12 @@ function getWeatherLocationAndSend(){
                     alert(data.message)
                     return;
                 }
-                document.getElementById('city').innerText = data.name
-                document.getElementById('temperature').innerText = data['main']['temp'] + 'c'
-                document.getElementById('description').innerText = data['weather'][0]['description']
-                document.getElementById('humidity').innerText = data['main']['humidity']
-                document.getElementById('pressure').innerText = data['main']['pressure']
-                document.getElementById('wind-speed').innerText = data['wind']['speed']
+                document.getElementById('city').innerText = "CITY : " + data.name
+                document.getElementById('temperature').innerText = "TEMPRATURE : "+data['main']['temp'] + ' °C'
+                document.getElementById('description').innerText ="DESCRIPTION : " + data['weather'][0]['description']
+                document.getElementById('humidity').innerText = "HUMIDITY : "+data['main']['humidity']
+                document.getElementById('pressure').innerText = "PRESSURE : "+data['main']['pressure']
+                document.getElementById('wind-speed').innerText = "WIND-SPEED : "+data['wind']['speed']
             })
 
         })

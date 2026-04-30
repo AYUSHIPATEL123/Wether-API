@@ -1,0 +1,33 @@
+.pera{
+    font-size: 20px;
+    color: white;
+    background-color: rgb(85, 116, 215);
+    padding: 10px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 20px auto;
+}
+
+#weather_result h1{
+    color: white;
+    
+}
+body{
+    background:black;
+    color:aliceblue;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: rgb(85, 116, 215);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+

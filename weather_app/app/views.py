@@ -15,10 +15,12 @@ def weather(request):
 
         lat = data.get('lat')
         lon = data.get('lon')
-        print("Received LAT:", lat)
-        print("Received LON:", lon)
+    
+
         url = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={os.getenv("API_KEY")}&units=metric'
+
 
         res = requests.get(url)
         return JsonResponse(res.json())
+    
     return render(request,'main.html')

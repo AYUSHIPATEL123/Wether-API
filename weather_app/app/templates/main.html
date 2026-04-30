@@ -3,7 +3,7 @@
 {% block content %}
 <button onclick="getWeatherLocationAndSend()">Get Weather</button>
 {% csrf_token %}
-<div id="weather-result">
+<div id="weather_result">
     <h1>Here is the weather information:</h1>
     <p class="pera" id="city"></p>
     <p class="pera" id="temperature"></p>
