@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 import json
 import os
 import requests
@@ -8,6 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Create your views here.
+@login_required(url='login')
 def weather(request):
     if request.method == 'POST':
 
