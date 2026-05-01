@@ -12,6 +12,7 @@
     color: white;
     
 }
+
 body{
     background:black;
     color:aliceblue;
@@ -31,3 +32,29 @@ button{
     cursor: pointer;
 }
 
+.form_cls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+form{
+    border: 1px solid rgb(85, 116, 215);
+    border-radius: 20px;
+    padding: 30px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1px;
+}
+
+form input{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
