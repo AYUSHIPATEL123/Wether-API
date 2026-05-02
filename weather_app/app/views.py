@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Create your views here.
-@login_required(url='login')
+@login_required(login_url='login')
 def weather(request):
     if request.method == 'POST':
 

@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'app.middlewares.first_middleware',
+    'app.middlewares.SecondMiddleware',
 ]
 
 ROOT_URLCONF = 'weather_app.urls'
