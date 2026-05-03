@@ -57,7 +57,7 @@ class RateLimitMiddleware:
         
         requests = cache.get(key,0)
 
-        if requests > 5:
+        if requests > 100:
             return JsonResponse({"error":"Too many requests"},status=429)
         
         cache.set(key,requests + 1,timeout=60)
@@ -105,7 +105,8 @@ from django.http import HttpResponse
 def mantenance_middleware(get_response):
 
     def middleware(request):
-        maintenance_mode = True
+        
+        maintenance_mode = False
         
         if maintenance_mode:
             return HttpResponse("<h1>Site dose under maintenance...</h1>",status=503)

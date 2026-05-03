@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'auth_ays',
+    'auth_ays.apps.AuthAysConfig',
 ]
 
 MIDDLEWARE = [
