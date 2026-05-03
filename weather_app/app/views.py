@@ -21,8 +21,11 @@ def weather(request):
 
         url = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={os.getenv("API_KEY")}&units=metric'
 
+        tenant=getattr(request, "tenant", None)
+        print(tenant)
 
         res = requests.get(url)
         return JsonResponse(res.json())
     
     return render(request,'main.html')
+
