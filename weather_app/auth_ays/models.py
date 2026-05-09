@@ -12,3 +12,11 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = ['username','first_name','last_name']
 
 
+class Profile(models.Model):
+    user = models.OneToOneField(CustomUser,on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
+    profile_image = models.ImageField(upload_to='profiles/',blank=True)
+
+    def __str__(self):
+        return self.user.username
+    

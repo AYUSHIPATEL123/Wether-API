@@ -12,6 +12,7 @@ class Register(CreateView):
     template_name = 'register.html'
     success_url = reverse_lazy('weather')
 
+
 class Login(FormView):
     template_name = 'login.html'
     form_class = LoginForm

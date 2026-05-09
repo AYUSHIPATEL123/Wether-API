@@ -15,15 +15,15 @@ class UserForm(forms.ModelForm):
             confirm_password = cleaned_data.get('confirm_password')
 
             if password and confirm_password and password != confirm_password:
-                messages.error(self.request, "Password and confirm password do not match")
+                
                 raise forms.ValidationError("Password and confirm password do not match")
             
             if len(password) < 8:
-                messages.error(self.request, "Password must be at least 8 characters long")
+                
                 raise forms.ValidationError("Password must be at least 8 characters long")
             
             if CustomUser.objects.filter(email=cleaned_data.get('email')).exists():
-                messages.error(self.request,"Email already exists")
+                
                 raise forms.ValidationError("Email already exists")
             
             return cleaned_data
